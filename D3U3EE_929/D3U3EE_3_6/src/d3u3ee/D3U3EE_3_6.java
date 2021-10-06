@@ -52,9 +52,8 @@ public class D3U3EE_3_6 implements Serializable {
 	}
 	
 	public static void visszaolvas() throws FileNotFoundException {
-		int db=0;
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Hanyadik rekordot szeretne visszaolvasni? Eddig " + db + " adat van");
+		System.out.println("Hanyadik rekordot szeretne visszaolvasni?");
 		boolean ok = true;
 		int olvas = 0;
 		do {
