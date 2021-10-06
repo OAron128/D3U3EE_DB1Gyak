@@ -1,0 +1,6 @@
+ egy 
+ négy 
+ hat 
+ négy 
+ öt 
+nyolc 
