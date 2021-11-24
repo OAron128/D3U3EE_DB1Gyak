@@ -1,0 +1,7 @@
+OKTATÓ [Tneptunkód, kód, tanszék, név]
+
+TÁRGY [kód, neptunkód, Tneptunkód, kredit, megnevezés]
+
+HALLGATÓ [neptunkód, kód, név, tankör, szül.d., életkor]
+
+CÍM [irszám, város, utca, hsz]

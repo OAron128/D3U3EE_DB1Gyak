@@ -1,0 +1,7 @@
+CREATE TABLE OKTATO (Tneptunkod INT PIRMARY KEY, kod INT REFERNCES TARGY (kod), tanszek VARCHAR (30), nev VARCHAR (50));
+
+CREATE TABLE TARGY (kod INT PRIMARY KEY, neptunkod INT REFERENCES HALLGATO (neptunkod), Tneptunkod INT REFERENCES OKTATO (Tneptunkod), kredit INT, megnevezes VARCHAR (30));
+
+CREATE TABLE HALLGATO (neptunkod INT PRIMARY KEY, kod INT REFERENCES TARGY (kod), nev VARCHAR (50), tankor VARCHAR (4), szül.d. DATE, eletkor INT);
+
+CREATE TABLE CÍM (irszam INT, varos VARCHAR(20), utca VARCHAR (30), hsz VARCHAR (10));
