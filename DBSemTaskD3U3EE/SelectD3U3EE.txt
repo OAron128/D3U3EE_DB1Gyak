@@ -1,0 +1,45 @@
+1e, Lekérdezések:
+1.	Hány tanár található a cég adatbázisában?
+ 
+SELECT COUNT(Tid)AS DB FROM TANAR;
+2.	A gyerekek milyen rokonságba vannak az adott szülővel?
+
+SELECT DIAKIGAZOLVANY.nev,DSZ.rokon,SZULO.SZid FROM DIAKIGAZOLVANY  INNER JOIN DIAK ON DIAKIGAZOLVANY.igazolvanyszam = DIAK.igazolvanyszam  INNER JOIN DSZ ON DIAK.igazolvanyszam = DSZ.diakigazolvany  INNER JOIN SZULO ON DSZ.SZid = SZULO.SZid;
+
+ 
+
+3.	Melyik tanár milyen órát tart és mikor kezdődik?
+
+SELECT TANAR.nev, ORA.foglalkozas, ORA.kezdetidatum FROM TANAR INNER JOIN ORA ON TANAR.Tid = ORA.Tid;
+
+ 
+
+4.	Melyik eszközből van a legtöbb és mik az adatai?
+SELECT mennyiseg, ar, kiadasidatum,garanciadatum FROM ESZKOZ ORDER BY mennyiseg DESC FETCH FIRST 1 ROWS ONLY;
+ 
+
+5.	Minden diák adatát és hobbyját írasd ki.
+
+SELECT nev,szuletesidatum, munkarend, kartyaszam,intezmeny,DIAKIGAZOLVANY.igazolvanyszam, hobby FROM DIAKIGAZOLVANY INNER JOIN DIAK ON DIAKIGAZOLVANY.igazolvanyszam = DIAK.igazolvanyszam;
+ 
+6.	Mikor kezdődik és mikor végződik az egyes órák és mennyi egy óra időtartama?
+SELECT kezdetidatum, vegzesidatum, (vegzesidatum-kezdetidatum) AS oraszam FROM ORA;
+
+ 
+	
+7.	Hány évesek a tanárok és mi a nevük?
+
+SELECT TANAR.nev , kor FROM TANAR;
+ 
+8.	Ki ’NAPPALI’ tagozatos?
+SELECT DIAKIGAZOLVANY.nev, munkarend FROM DIAKIGAZOLVANY WHERE munkarend='NAPPALI';
+ 
+
+9.	Írasd ki azokat a diákokat, akik Miskolcon laknak és pontos lakcímet.
+
+SELECT DIAKIGAZOLVANY.nev , irsz, varos, utca, hazszam FROM DIAKIGAZOLVANY INNER JOIN DIAK ON DIAKIGAZOLVANY.igazolvanyszam =DIAK.igazolvanyszam INNER JOIN DSZ ON DIAK.igazolvanyszam = DSZ.diakigazolvany INNER JOIN SZULO ON DSZ.SZid= SZULO.SZid;
+
+ 
+
+10.	Írasd ki azokat az eszközöket, amikért nem kellett fizetni.
+SELECT Eid, garanciadatum,mennyiseg,kiadasidatum,ar FROM ESZKOZ WHERE ar IS NULL;

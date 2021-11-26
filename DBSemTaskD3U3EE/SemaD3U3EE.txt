@@ -1,0 +1,19 @@
+DIÁKIGAZOLVÁNY [név, születésidátum, munkarend, kártyaszám, intézmény, igazolványszám]
+
+DIÁK [igazolványszám, hobby, neme]
+
+ROKON [igazolványszám, szülőID]
+
+SZÜLŐ [Szid, irsz, város, utca, házszám]
+
+SZERZŐDÉS [aláírás dátum, lejárati dátum, szülőID, Cid, Tid]
+
+TANÁR [Tid, név, végzettség, adószám, kor]
+
+FOGLALKOZÁS [kezdet dátum, végzés dátum, Tid, Eid, Cid]
+
+ESZKÖZ [Eid, garancia dátum, mennyiség, ár, kiadás dátum]
+
+CÉG [Cid, tulajdonos, alapítási dátum, elérhetőség, telephely]
+
+LOGO [szín, készítési dátum, stílus, tervező, Cid]
