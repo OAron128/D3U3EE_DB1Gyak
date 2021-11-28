@@ -2,6 +2,8 @@ DIÁKIGAZOLVÁNY [név, születésidátum, munkarend, kártyaszám, intézmény,
 
 DIÁK [igazolványszám, hobby, neme]
 
+BEIRATKOZAS IDEJE [Bid, evszak, ev, honap, nap]
+
 ROKON [igazolványszám, szülőID]
 
 SZÜLŐ [Szid, irsz, város, utca, házszám]
